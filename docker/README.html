@@ -57,13 +57,17 @@ add your own hostname on your <code>/etc/hosts</code></p>
 </thead>
 <tbody>
 <tr>
-  <td>Webserver</td>
-  <td><a href="http://localhost:9000">localhost:9000</a></td>
+  <td>Nginx</td>
+  <td><a href="http://app-laravel.local">app-laravel.local</a></td>
 </tr>
 <tr>
   <td>MySQL</td>
   <td><strong>host:</strong> <code>localhost</code>; <strong>port:</strong> <code>9002</code></td>
 </tr>
+<tr>
+    <td>PHPMyAdmin</td>
+    <td><a href="http://localhost:8080">localhost:8080</a></td>
+  </tr>
 </tbody>
 </table>
 
@@ -81,8 +85,8 @@ add your own hostname on your <code>/etc/hosts</code></p>
 </thead>
 <tbody>
 <tr>
-  <td>php-fpm</td>
-  <td>php-fpm</td>
+  <td>php</td>
+  <td>php</td>
   <td>9000</td>
 </tr>
 <tr>
@@ -114,8 +118,8 @@ all containers in <code>SERVICE_NAME</code>.</li>
 to run. Examples:
 
 <ul>
-<li>Shell into the PHP container, <code>docker-compose exec php-fpm bash</code></li>
-<li>Run symfony console, <code>docker-compose exec php-fpm bin/console</code></li>
+<li>Shell into the PHP container, <code>docker-compose exec php bash</code></li>
+<li>Run symfony console, <code>docker-compose exec php bin/console</code></li>
 <li>Open a mysql shell, <code>docker-compose exec mysql mysql -uroot -pCHOSEN_ROOT_PASSWORD</code></li>
 </ul></li>
 </ul>
@@ -125,7 +129,7 @@ to run. Examples:
 <p>As in all server environments, your application needs the correct file permissions to work properly. You can change the
 files throughout the container, so you won't care if the user exists or has the same ID on your host.</p>
 
-<p><code>docker-compose exec php-fpm chown -R www-data:www-data /application/public</code></p>
+<p><code>docker-compose exec php chown -R www-data:www-data /var/www/html/public</code></p>
 
 <h1>Recommendations</h1>
 

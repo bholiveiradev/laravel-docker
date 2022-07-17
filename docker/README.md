@@ -30,8 +30,9 @@ add your own hostname on your `/etc/hosts`
 
 Service|Address outside containers
 -------|--------------------------
-Webserver|[localhost:9000](http://localhost:9000)
+Nginx|[app-laravel.local](http://app-laravel.local)
 MySQL|**host:** `localhost`; **port:** `9002`
+PHPMyAdmin|[localhost:8080](http://localhost:8080)
 
 ## Hosts within your environment ##
 
@@ -56,8 +57,8 @@ Redis|redis|6379 (default)
   all containers in `SERVICE_NAME`.
 * Execute command inside of container: `docker-compose exec SERVICE_NAME COMMAND` where `COMMAND` is whatever you want
   to run. Examples:
-    * Shell into the PHP container, `docker-compose exec php-fpm bash`
-    * Run symfony console, `docker-compose exec php-fpm bin/console`
+    * Shell into the PHP container, `docker-compose exec php bash`
+    * Run symfony console, `docker-compose exec php bin/console`
     * Open a mysql shell, `docker-compose exec mysql mysql -uroot -pCHOSEN_ROOT_PASSWORD`
 
 # Application file permissions #
@@ -65,7 +66,7 @@ Redis|redis|6379 (default)
 As in all server environments, your application needs the correct file permissions to work properly. You can change the
 files throughout the container, so you won't care if the user exists or has the same ID on your host.
 
-`docker-compose exec php-fpm chown -R www-data:www-data /application/public`
+`docker-compose exec php chown -R www-data:www-data /application/public`
 
 # Recommendations #
 
