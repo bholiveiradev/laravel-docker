@@ -40,7 +40,7 @@ You'll need to configure your application to use any services you enabled:
 
 Service|Hostname|Port number
 ------|---------|-----------
-php-fpm|php-fpm|9000
+php|php|9000
 MySQL|mysql|3306 (default)
 Redis|redis|6379 (default)
 
